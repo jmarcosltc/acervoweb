@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Biblioteca - Acervo</title>
+        <!-- <link rel="stylesheet" type="text/css" href="./styles/styles.css"></link> -->
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form id="data">
+                <h1><h:outputText value="List"></h:outputText></h1>
+                <h:dataTable value="#{bibliotecaBean.read}" var="a">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{a.id}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{a.nome}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID"></h:outputText>
+                        </f:facet>
+                        <h:outputText value="#{a.editora}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Atualizar Dados</f:facet>
+                        <h:commandButton action="#{bibliotecaBean.updateForm(a)}" value="Atualizar"/>
+                        <br/>
+                        <h:commandButton action="#{bibliotecaBean.delete(a)}" value="Deletar"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+            <br/>
+            <h:form>
+                <div>
+                    <h:outputText value="Nome"></h:outputText>
+                    <br/>
+                    <h:inputText value="#{bibliotecaBean.acervo.nome}"></h:inputText>
+                    <br/>
+                    <h:outputText value="Editora"></h:outputText>
+                    <br/>
+                    <h:inputText value="#{bibliotecaBean.acervo.editora}"></h:inputText>
+                </div>
+                <h:commandButton action="#{bibliotecaBean.create()}" value="Criar"/>
+                <h:commandButton action="#{bibliotecaBean.update()}" value="Atualizar"/>         
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

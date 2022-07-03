@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="biblioteca" type="javax.sql.DataSource">#Sun Jul 03 09:38:02 BRT 2022
+password=admin
+jdbcDriver=org.postgresql.Driver
+jdbcUrl=jdbc\:postgresql\://localhost\:5432/biblioteca
+userName=postgres
+</Resource>
+</resources>
